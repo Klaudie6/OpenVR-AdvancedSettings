@@ -24,7 +24,8 @@ struct QtInfo
     const std::string settingName;
 };
 
-[[nodiscard]] QSettings& getQSettings() {
+[[nodiscard]] QSettings& getQSettings()
+{
     static QSettings s( QSettings::IniFormat,
                         QSettings::UserScope,
                         application_strings::applicationOrganizationName,
@@ -33,8 +34,7 @@ struct QtInfo
     return s;
 }
 
-    [[nodiscard]] std::string
-    getQtCategoryName( const SettingCategory category )
+[[nodiscard]] std::string getQtCategoryName( const SettingCategory category )
 {
     switch ( category )
     {
@@ -61,7 +61,8 @@ struct QtInfo
 }
 
 [[nodiscard]] QVariant getQtSetting( const SettingCategory category,
-                                     const std::string qtSettingName ) {
+                                     const std::string qtSettingName )
+{
     getQSettings().beginGroup( getQtCategoryName( category ).c_str() );
 
     const auto v = getQSettings().value( qtSettingName.c_str() );
@@ -80,8 +81,8 @@ void saveQtSetting( const SettingCategory category,
     getQSettings().endGroup();
 }
 
-template <typename Value>
-[[nodiscard]] bool isValidQVariant( const QVariant v ) {
+template <typename Value>[[nodiscard]] bool isValidQVariant( const QVariant v )
+{
     auto savedSettingIsValid = v.isValid() && !v.isNull();
 
     if constexpr ( std::is_same<Value, std::string>::value )

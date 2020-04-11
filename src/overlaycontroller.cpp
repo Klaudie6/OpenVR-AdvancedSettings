@@ -381,7 +381,7 @@ void OverlayController::SetWidget( QQuickItem* quickItem,
             throw std::runtime_error( std::string(
                 "Failed to create Overlay: "
                 + std::string( vr::VROverlay()->GetOverlayErrorNameFromEnum(
-                      overlayError ) ) ) );
+                    overlayError ) ) ) );
         }
         vr::VROverlay()->SetOverlayWidthInMeters( m_ulOverlayHandle, 2.5f );
         vr::VROverlay()->SetOverlayInputMethod(
@@ -485,7 +485,7 @@ void OverlayController::renderOverlay()
         if ( !vr::VROverlay()
              || ( !vr::VROverlay()->IsOverlayVisible( m_ulOverlayHandle )
                   && !vr::VROverlay()->IsOverlayVisible(
-                         m_ulOverlayThumbnailHandle ) ) )
+                      m_ulOverlayThumbnailHandle ) ) )
             return;
         m_renderControl.polishItems();
         m_renderControl.sync();

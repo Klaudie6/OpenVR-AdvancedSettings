@@ -11,9 +11,9 @@ public:
     {
     }
 
-    virtual ~SettingValue(){}
+    virtual ~SettingValue() {}
 
-        [[nodiscard]] SettingCategory category() const noexcept
+    [[nodiscard]] SettingCategory category() const noexcept
     {
         return m_category;
     }
