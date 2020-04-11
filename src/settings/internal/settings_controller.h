@@ -31,20 +31,18 @@ template <typename Value> std::string valueToString( Value value )
 
 template <int ArraySize, typename Value>
 [[nodiscard]] std::string
-    returnSettingsAndValues( std::array<Value, ArraySize> v )
-{
-    std::string s = "default";
+    returnSettingsAndValues( std::array<Value, ArraySize> v ) {
+        std::string s = "default";
 
-    for ( const auto& setting : v )
-    {
-        s += setting.qtInfo().settingName + ": '"
-             + valueToString( setting.value() ) + "' | ";
-    }
+        for ( const auto& setting : v )
+        {
+            s += setting.qtInfo().settingName + ": '"
+                 + valueToString( setting.value() ) + "' | ";
+        }
 
-    return s;
-}
-template <typename Enum, int ArraySize, typename Value>
-void verifySettings( std::array<Value, ArraySize> v ) noexcept
+        return s;
+    } template <typename Enum, int ArraySize, typename Value>
+    void verifySettings( std::array<Value, ArraySize> v ) noexcept
 {
     for ( int settingIndex = 0; settingIndex < ( ArraySize - 1 );
           ++settingIndex )

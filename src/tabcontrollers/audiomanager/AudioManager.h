@@ -12,11 +12,9 @@ class AudioDevice
 {
 public:
     AudioDevice( const std::string id, const std::string name )
-        : m_id( id ), m_name( name )
-    {
-    }
+        : m_id( id ), m_name( name ){}
 
-    [[nodiscard]] std::string id() const noexcept
+                          [[nodiscard]] std::string id() const noexcept
     {
         return m_id;
     }

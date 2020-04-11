@@ -112,8 +112,8 @@ void enableApplicationAutostart()
         throw std::runtime_error(
             std::string( "Could not set auto start: " )
             + std::string(
-                vr::VRApplications()->GetApplicationsErrorNameFromEnum(
-                    app_error ) ) );
+                  vr::VRApplications()->GetApplicationsErrorNameFromEnum(
+                      app_error ) ) );
     }
 }
 
@@ -138,8 +138,8 @@ void installApplicationManifest( const std::string manifestPath )
             throw std::runtime_error(
                 std::string( "Could not add application manifest: " )
                 + std::string(
-                    vr::VRApplications()->GetApplicationsErrorNameFromEnum(
-                        app_error ) ) );
+                      vr::VRApplications()->GetApplicationsErrorNameFromEnum(
+                          app_error ) ) );
         }
     }
 }
@@ -190,8 +190,8 @@ void reinstallApplicationManifest( const std::string manifestPath )
                 "Could not find working directory of already "
                 "installed application: "
                 + std::string(
-                    vr::VRApplications()->GetApplicationsErrorNameFromEnum(
-                        app_error ) ) );
+                      vr::VRApplications()->GetApplicationsErrorNameFromEnum(
+                          app_error ) ) );
         }
 
         const auto oldManifestPath
@@ -227,8 +227,8 @@ void forceRemoveApplicationManifest()
                 "Could not find working directory of already "
                 "installed application: "
                 + std::string(
-                    vr::VRApplications()->GetApplicationsErrorNameFromEnum(
-                        app_error ) ) );
+                      vr::VRApplications()->GetApplicationsErrorNameFromEnum(
+                          app_error ) ) );
         }
 
         const auto oldManifestPath
@@ -253,8 +253,7 @@ void forceRemoveApplicationManifest()
 // "--force-no-manifest". The OpenVR initialization is necessary for both
 // removing and installing manifests.
 [[noreturn]] void handleManifests( const bool installManifest,
-                                   const bool removeManifest )
-{
+                                   const bool removeManifest ) {
     openvr_init::initializeOpenVR(
         openvr_init::OpenVrInitializationType::Utility );
 

@@ -260,7 +260,7 @@ void RotationTabController::doAutoTurn(
                         = m_autoTurnWallActive[circularIndex(
                               i, true, chaperoneDistances.size() )]
                           || m_autoTurnWallActive[circularIndex(
-                              i, false, chaperoneDistances.size() )];
+                                 i, false, chaperoneDistances.size() )];
 
                     bool turnLeft = true;
                     // Turn away from corner
@@ -366,7 +366,7 @@ void RotationTabController::doAutoTurn(
             else if ( ( chaperoneQuad.distance
                         > ( RotationTabController::autoTurnActivationDistance()
                             + RotationTabController::
-                                autoTurnDeactivationDistance() ) )
+                                  autoTurnDeactivationDistance() ) )
                       && m_autoTurnWallActive[i] )
             {
                 m_autoTurnWallActive[i] = false;

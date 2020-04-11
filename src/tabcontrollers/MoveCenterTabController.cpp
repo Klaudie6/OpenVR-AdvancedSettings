@@ -2907,8 +2907,9 @@ void MoveCenterTabController::eventLoopTick(
             // Smooth turn motion can cause sim-sickness so we check if the user
             // wants to skip frames to reduce vection. We use the factor squared
             // because of logarithmic human perception.
-            if ( m_turnComfortFrameSkipCounter >= static_cast<unsigned>(
-                     ( turnComfortFactor() * turnComfortFactor() ) ) )
+            if ( m_turnComfortFrameSkipCounter
+                 >= static_cast<unsigned>(
+                        ( turnComfortFactor() * turnComfortFactor() ) ) )
             {
                 updateHandTurn( devicePoses, angle );
                 m_turnComfortFrameSkipCounter = 0;
@@ -2921,8 +2922,9 @@ void MoveCenterTabController::eventLoopTick(
             // Smooth drag motion can cause sim-sickness so we check if the user
             // wants to skip frames to reduce vection. We use the factor squared
             // because of logarithmic human perception.
-            if ( m_dragComfortFrameSkipCounter >= static_cast<unsigned>(
-                     ( dragComfortFactor() * dragComfortFactor() ) ) )
+            if ( m_dragComfortFrameSkipCounter
+                 >= static_cast<unsigned>(
+                        ( dragComfortFactor() * dragComfortFactor() ) ) )
             {
                 updateHandDrag( devicePoses, angle );
                 m_lastDragUpdateTimePoint = std::chrono::steady_clock::now();

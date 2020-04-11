@@ -19,8 +19,7 @@ void saveAllSettings()
     LOG( INFO ) << "All settings saved.";
 }
 
-[[nodiscard]] bool getSetting( const BoolSetting setting )
-{
+[[nodiscard]] bool getSetting( const BoolSetting setting ) {
     return settingController.getSetting<bool>( setting );
 }
 
@@ -29,8 +28,7 @@ void setSetting( const BoolSetting setting, const bool value )
     settingController.setSetting( setting, value );
 }
 
-[[nodiscard]] double getSetting( const DoubleSetting setting )
-{
+[[nodiscard]] double getSetting( const DoubleSetting setting ) {
     return settingController.getSetting<double>( setting );
 }
 
@@ -39,8 +37,7 @@ void setSetting( const DoubleSetting setting, const double value )
     settingController.setSetting( setting, value );
 }
 
-[[nodiscard]] int getSetting( const IntSetting setting )
-{
+[[nodiscard]] int getSetting( const IntSetting setting ) {
     return settingController.getSetting<int>( setting );
 }
 
@@ -49,8 +46,7 @@ void setSetting( const IntSetting setting, const int value )
     settingController.setSetting( setting, value );
 }
 
-[[nodiscard]] std::string getSetting( const StringSetting setting )
-{
+[[nodiscard]] std::string getSetting( const StringSetting setting ) {
     return settingController.getSetting<std::string>( setting );
 }
 
